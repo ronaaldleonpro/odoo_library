@@ -36,11 +36,11 @@
         <field name="name">library.member.tree</field>
         <field name="model">library.member</field>
         <field name="arch" type="xml">
-            <tree string="Library Members">
+            <list string="Library Members">
                 <field name="name"/>
                 <field name="join_date"/>
                 <field name="member_code"/>
-            </tree>
+            </list>
         </field>
     </record>
 

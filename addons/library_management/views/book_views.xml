@@ -22,13 +22,13 @@
     <field name="name">library.book.tree</field>
     <field name="model">library.book</field>
     <field name="arch" type="xml">
-      <tree>
-      <field name="isbn"/>
+      <list>
+        <field name="isbn"/>
         <field name="title"/>
         <field name="author"/>
         <field name="publication_date"/>
         <field name="years_since_publication"/>
-      </tree>
+      </list>
     </field>
   </record>
 
@@ -38,6 +38,5 @@
     <field name="view_mode">tree,form</field>
   </record>
 
-  <menuitem id="menu_library_management" name="Library Management"/>
   <menuitem id="menu_library_book" name="Books" parent="menu_library_management" action="action_library_book"/>
 </odoo>

@@ -21,12 +21,12 @@
     <field name="name">library.loan.tree</field>
     <field name="model">library.loan</field>
     <field name="arch" type="xml">
-      <tree>
+      <list>
         <field name="member_id"/>
         <field name="book_id"/>
         <field name="loan_date"/>
         <field name="returned"/>
-      </tree>
+      </list>
     </field>
   </record>
 
