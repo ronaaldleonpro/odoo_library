@@ -5,7 +5,7 @@ class LibraryMember(models.Model):
     _name = 'library.member'
     _description = 'Library Member'
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(required=True)
     join_date = fields.Date(default=fields.Date.today)
     member_code = fields.Char(readonly=True, copy=False)
 

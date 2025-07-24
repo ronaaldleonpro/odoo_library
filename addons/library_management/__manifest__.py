@@ -7,7 +7,9 @@
     'summary': ' Manage library members, books and loans',
     'description': "",
     'data': [
-
+        'views/book_views.xml',
+        'views/loan_views.xml',
+        'views/member_views.xml',
     ],
     'installable': True,
     'application': True,

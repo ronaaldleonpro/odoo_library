@@ -1,38 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <record id="view_form_library_member" model="ir.ui.view">
-    <field name="name">library.member.form</field>
-    <field name="model">library.member</field>
-    <field name="arch" type="xml">
-      <form>
-        <sheet>
-          <group>
-            <field name="name"/>
-            <field name="join_date"/>
-            <field name="member_code" readonly="1"/>
-          </group>
-        </sheet>
-      </form>
-    </field>
-  </record>
+    <!-- Secuencia para códigos de miembro -->
+    <data noupdate="1">
+        <record id="seq_library_member" model="ir.sequence">
+            <field name="name">Library Member Sequence</field>
+            <field name="code">library.member</field>
+            <field name="prefix">MEM/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
 
-  <record id="view_tree_library_member" model="ir.ui.view">
-    <field name="name">library.member.tree</field>
-    <field name="model">library.member</field>
-    <field name="arch" type="xml">
-      <tree>
-        <field name="name"/>
-        <field name="join_date"/>
-        <field name="member_code"/>
-      </tree>
-    </field>
-  </record>
+    <!-- Menú principal -->
+    <menuitem id="menu_library_management" name="Library Management" sequence="10"/>
 
-  <record id="action_library_member" model="ir.actions.act_window">
-    <field name="name">Members</field>
-    <field name="res_model">library.member</field>
-    <field name="view_mode">tree,form</field>
-  </record>
+    <!-- Vista Form -->
+    <record id="view_form_library_member" model="ir.ui.view">
+        <field name="name">library.member.form</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="join_date"/>
+                        <field name="member_code" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-  <menuitem id="menu_library_member" name="Members" parent="menu_library_management" action="action_library_member"/>
+    <!-- Vista Tree (corregida) -->
+    <record id="view_tree_library_member" model="ir.ui.view">
+        <field name="name">library.member.tree</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <tree string="Library Members">
+                <field name="name"/>
+                <field name="join_date"/>
+                <field name="member_code"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción y menú -->
+    <record id="action_library_member" model="ir.actions.act_window">
+        <field name="name">Members</field>
+        <field name="res_model">library.member</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_library_member" name="Members" parent="menu_library_management" action="action_library_member" sequence="10"/>
 </odoo>
