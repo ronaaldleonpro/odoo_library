@@ -6,6 +6,7 @@ import re
 class LibraryBook(models.Model):
     _name = 'library.book'
     _description = 'Book'
+    _rec_name = 'title'
 
     isbn = fields.Char(
         string='ISBN',
