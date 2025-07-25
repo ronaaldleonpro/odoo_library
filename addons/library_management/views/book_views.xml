@@ -29,6 +29,7 @@
         <field name="publication_date" string="Publication Year"/>
         <field name="years_since_publication" string="Years Since Publication"/>
         <field name="available_display" readonly="1"/>
+        <button name="action_create_loan" type="object" icon="fa-handshake-o" string="Lend" invisible="not available"/>
       </list>
     </field>
   </record>
