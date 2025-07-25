@@ -137,6 +137,9 @@ odoo-library/
    │         │   ├── loan_views.xml
    │         │   ├── member_views.xml
    │         │   └── menu_views.xml
+   │         ├── static/
+   │         │   └── description/
+   │         │       └── icon.png
    │         ├── __init__.py
    │         └── __manifest__.py
    ├── .gitignore
