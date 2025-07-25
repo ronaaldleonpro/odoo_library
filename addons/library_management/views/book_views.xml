@@ -46,6 +46,9 @@
                 <strong><field name="title"/></strong>
                 <div><small><field name="author"/></small></div>
                 <div><small>ISBN: <field name="isbn"/></small></div>
+                <div><small>Publication Year: <field name="publication_date"/></small></div>
+                <div><small>Years Since Publication: <field name="years_since_publication"/> years</small></div>
+                <div><small><field name="available_display"/></small></div>
                 <div class="text-end mt-2"><button type="object" name="action_create_loan" class="btn btn-outline-primary" string="Lend" icon="fa-handshake-o"/></div>
               </div>
             </div>
