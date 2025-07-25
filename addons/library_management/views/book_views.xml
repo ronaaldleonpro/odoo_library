@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+  <!-- Book Form View -->
   <record id="view_form_library_book" model="ir.ui.view">
     <field name="name">library book form</field>
     <field name="model">library.book</field>
     <field name="arch" type="xml">
       <form>
           <group>
-            <field name="isbn"/>
-            <field name="title"/>
-            <field name="author"/>
-            <field name="publication_date"/>
-            <field name="years_since_publication" readonly="1"/>
+            <field name="isbn" placeholder="978-XXXXX-X-XXX-X"/>
+            <field name="title" string="Title"/>
+            <field name="author" string="Author"/>
+            <field name="publication_date" string="Publication Year"/>
+            <field name="years_since_publication" string="Years Since Publication" readonly="1"/>
+            <field name="available" string="Available"/>
           </group>
       </form>
     </field>
   </record>
-
+  <!-- Books view -->
   <record id="view_tree_library_book" model="ir.ui.view">
     <field name="name">library book list</field>
     <field name="model">library.book</field>
     <field name="arch" type="xml">
       <list>
-        <field name="isbn"/>
-        <field name="title"/>
-        <field name="author"/>
-        <field name="publication_date"/>
-        <field name="years_since_publication"/>
+        <field name="isbn" string="ISBN"/>
+        <field name="title" string="Title"/>
+        <field name="author" string="Author"/>
+        <field name="publication_date" string="Publication Year"/>
+        <field name="years_since_publication" string="Years Since Pub."/>
+        <field name="available_display" readonly="1"/>
       </list>
     </field>
   </record>
