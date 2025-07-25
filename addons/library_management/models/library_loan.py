@@ -57,7 +57,7 @@ class LibraryLoan(models.Model):
                 ('returned', '=', False)
             ])
             if active_loans >= 5:
-                raise ValidationError("Member %s already has 5 active loans!" % loan.member_id.name)
+                raise ValidationError("Member '%s' already has 5 active loans!" % member.name)
         
         # Create the loan
         loan = super().create(vals)
@@ -83,7 +83,7 @@ class LibraryLoan(models.Model):
                     ('id', '!=', loan.id)
                 ])
                 if active_loans >= 5:
-                    raise ValidationError("Member %s cannot have more than 5 active loans!" % loan.member_id.name)
+                    raise ValidationError("Member '%s' cannot have more than 5 active loans!" % member.name)
 
     @api.depends('returned')
     def _compute_returned_display(self):
