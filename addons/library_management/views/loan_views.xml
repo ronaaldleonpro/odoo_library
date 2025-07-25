@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+<!-- Loan Form View -->
   <record id="view_form_library_loan" model="ir.ui.view">
     <field name="name">library loan form</field>
     <field name="model">library.loan</field>
     <field name="arch" type="xml">
       <form>
           <group>
-            <field name="member_id"/>
-            <field name="book_id"/>
-            <field name="loan_date"/>
-            <field name="returned"/>
+            <field name="member_id" string="Member"/>
+            <field name="book_id" string="Book"/>
+            <field name="loan_date" string="Loan Date"/>
+            <field name="returned" string="Returned"/>
           </group>
       </form>
     </field>
   </record>
-
+   <!-- Loans view -->
   <record id="view_tree_library_loan" model="ir.ui.view">
     <field name="name">library loan list</field>
     <field name="model">library.loan</field>
     <field name="arch" type="xml">
       <list>
-        <field name="member_id"/>
-        <field name="book_id"/>
-        <field name="loan_date"/>
-        <field name="returned"/>
+        <field name="member_id" string="Member"/>
+        <field name="book_id" string="Book"/>
+        <field name="loan_date" string="Loan Date"/>
+        <field name="returned_display" readonly="1"/>
+        <button name="action_return_book" type="object" icon="fa-check" string="Return" invisible="returned"/>
       </list>
     </field>
   </record>

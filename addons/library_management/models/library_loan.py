@@ -25,6 +25,11 @@ class LibraryLoan(models.Model):
         default=False,
         help="Check manually if the book has been returned"
     )
+    returned_display = fields.Char(
+        string='Return Status',
+        compute='_compute_returned_display',
+        store=False
+    )
 
     @api.model
     def create(self, vals):
@@ -44,3 +49,21 @@ class LibraryLoan(models.Model):
             count = self.search_count([('member_id', '=', record.member_id.id), ('returned', '=', False)])
             if count > 5:
                 raise ValidationError('A member cannot have more than 5 active loans.')
+
+    @api.depends('returned')
+    def _compute_returned_display(self):
+        for loan in self:
+            loan.returned_display = 'Returned' if loan.returned else 'Borrowed'
+
+    def action_return_book(self):
+        self.write({
+            'returned': True,
+        })
+        self.book_id.write({'available': True})
+        return {
+            'effect': {
+                'fadein': 'slow',
+                'message': 'Book returned successfully!',
+                'type': 'rainbow_man',
+            }
+        }
