@@ -27,7 +27,7 @@
         <field name="title" string="Title"/>
         <field name="author" string="Author"/>
         <field name="publication_date" string="Publication Year"/>
-        <field name="years_since_publication" string="Years Since Pub."/>
+        <field name="years_since_publication" string="Years Since Publication"/>
         <field name="available_display" readonly="1"/>
       </list>
     </field>
