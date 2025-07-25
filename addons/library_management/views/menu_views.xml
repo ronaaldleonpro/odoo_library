@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Principal Menu -->
+    <menuitem id="menu_library_management" name="Library Management" sequence="-100"/>
+    <menuitem id="menu_library_member" name="Members" sequence="0" parent="menu_library_management" action="action_library_member"/>
+    <menuitem id="menu_library_book" name="Books" sequence="0" parent="menu_library_management" action="action_library_book"/>
+    <menuitem id="menu_library_loan" name="Loans" sequence="0" parent="menu_library_management" action="action_library_loan"/>
+</odoo>

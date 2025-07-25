@@ -7,6 +7,8 @@
     'summary': ' Manage library members, books and loans',
     'description': "",
     'data': [
+        'security/ir.model.access.csv',
+        'views/menu_views.xml',
         'views/book_views.xml',
         'views/loan_views.xml',
         'views/member_views.xml',
