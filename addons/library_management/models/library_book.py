@@ -27,7 +27,6 @@ class LibraryBook(models.Model):
         string='Years Since Publication',
         required=True,
         help="Select any date. Only gets the year." 
-        
     )
     years_since_publication = fields.Integer(
         compute='_compute_years_since_publication', 
